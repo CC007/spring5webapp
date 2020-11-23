@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Author
@@ -15,6 +16,8 @@ public class Author
 
 	private String firstName;
 	private String lastName;
+
+	@ManyToMany(mappedBy = "authors")
 	private Set<Book> books;
 
 	public Author()
